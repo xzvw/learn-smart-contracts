@@ -9,4 +9,5 @@
 
 ## Links
 
-Remix: https://remix.ethereum.org/
+- Remix: https://remix.ethereum.org/
+- Course GitHub by Patrick Collins: https://github.com/Cyfrin/foundry-full-course-f23
