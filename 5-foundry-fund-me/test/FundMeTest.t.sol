@@ -15,7 +15,8 @@ contract FundMeTest is Test {
     }
 
     function testOwnerIsMsgSender() public view {
-        assertEq(fundMe.i_owner(), address(this));
+        // Not quite understand why `msg.sender` here 😿
+        assertEq(fundMe.i_owner(), msg.sender);
     }
 
     function testMinimumUsdIsFive() public view {
