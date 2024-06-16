@@ -6,6 +6,8 @@
   - Reference: https://github.com/Cyfrin/remix-storage-factory-f23
 - `3-remix-fund-me`
   - Reference: https://github.com/Cyfrin/remix-fund-me-f23
+- `4-foundry-simple-storage`
+  - Reference: https://github.com/Cyfrin/foundry-simple-storage-f23
 
 ## Links
 
