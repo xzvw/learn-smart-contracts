@@ -5,13 +5,9 @@ import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/Ag
 
 library PriceConverter {
     // To get 1 ETH = ? USD
-    function getPrice() internal view returns (uint256) {
-        // Sepolia ETH / USD address:
-        // https://docs.chain.link/data-feeds/price-feeds/addresses
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(
-            0x694AA1769357215DE4FAC081bf1f309aDC325306
-        );
-
+    function getPrice(
+        AggregatorV3Interface priceFeed
+    ) internal view returns (uint256) {
         (, int256 answer, , , ) = priceFeed.latestRoundData();
 
         // 回傳的 answer 小數位數為 8 digits
@@ -22,9 +18,10 @@ library PriceConverter {
     // Input: ETH amount (wei)
     // Output: ETH amount (wei) in USD
     function getConversionRate(
-        uint256 ethAmount
+        uint256 ethAmount,
+        AggregatorV3Interface priceFeed
     ) internal view returns (uint256) {
-        uint256 ethPrice = getPrice();
+        uint256 ethPrice = getPrice(priceFeed);
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
 
         return ethAmountInUsd;

@@ -9,7 +9,9 @@ contract FundMeTest is Test {
 
     // 首先會呼叫 setUp
     function setUp() external {
-        fundMe = new FundMe();
+        // Sepolia ETH / USD address:
+        // https://docs.chain.link/data-feeds/price-feeds/addresses
+        fundMe = new FundMe(0x694AA1769357215DE4FAC081bf1f309aDC325306);
     }
 
     function testOwnerIsMsgSender() public view {
@@ -18,5 +20,10 @@ contract FundMeTest is Test {
 
     function testMinimumUsdIsFive() public view {
         assertEq(fundMe.MINIMUM_USD(), 5e18);
+    }
+
+    function testPriceFeedVersionIsAccureate() public view {
+        uint256 version = fundMe.getVersion();
+        assertEq(version, 4);
     }
 }
