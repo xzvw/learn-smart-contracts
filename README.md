@@ -8,6 +8,8 @@
   - Reference: https://github.com/Cyfrin/remix-fund-me-f23
 - `4-foundry-simple-storage`
   - Reference: https://github.com/Cyfrin/foundry-simple-storage-f23
+- `react-simple-storage`
+  - The frontend, developed using React and `ethers`, facilitates interactions between the MetaMask wallet and the Simple Storage smart contract.
 
 ## Links
 
