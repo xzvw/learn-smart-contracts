@@ -14,8 +14,8 @@ contract FundMe {
 
     uint256 public constant MINIMUM_USD = 5e18;
 
-    address[] public s_funders;
-    mapping(address => uint256) public s_addressToAmountFunded;
+    address[] private s_funders;
+    mapping(address => uint256) private s_addressToAmountFunded;
 
     constructor(address priceFeedAddress) {
         i_owner = msg.sender;
